@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master1.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Autos para Alquiler:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Auto</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idAlquilerAuto" value="Id " styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="idAlquilerAuto"
+				styleClass="form-control" value="#{alquilerAutoController.alquilerAuto.idAlquilerAuto}"
+				required="true" />
+			<h:outputLabel for="modeloAuto" value="Modelo "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="modeloAuto"
+				styleClass="form-control"
+				value="#{alquilerAutoController.alquilerAuto.modeloAuto}" maxlength="20"
+				required="true" />
+
+			<h:outputLabel for="precioAlquilerAuto" value="Precio "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="precioAlquilerAuto"
+				styleClass="form-control"
+				value="#{alquilerAutoController.alquilerAuto.precio}" maxlength="30"
+				required="true" />
+				
+			<br />
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{alquilerAutoController.insertar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listAuto?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listAuto?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
