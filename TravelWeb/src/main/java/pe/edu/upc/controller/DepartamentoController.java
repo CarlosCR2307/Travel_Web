@@ -109,19 +109,6 @@ public class DepartamentoController implements Serializable {
 	}
 
 
-
-	public IDepartamentoService getmService() {
-		return dService;
-	}
-
-
-
-	public void setmService(IDepartamentoService dService) {
-		this.dService = dService;
-	}
-
-
-
 	public Departamento getDepartamento() {
 		return departamento;
 	}

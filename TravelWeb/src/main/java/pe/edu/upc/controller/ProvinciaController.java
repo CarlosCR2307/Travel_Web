@@ -125,31 +125,6 @@ public class ProvinciaController implements Serializable {
 	}
 
 
-
-	public IProvinciaService getpService() {
-		return pService;
-	}
-
-
-
-	public void setpService(IProvinciaService pService) {
-		this.pService = pService;
-	}
-
-
-
-	public IDepartamentoService getmService() {
-		return dService;
-	}
-
-
-
-	public void setmService(IDepartamentoService dService) {
-		this.dService = dService;
-	}
-
-
-
 	public Provincia getProvincia() {
 		return provincia;
 	}
