@@ -8,4 +8,5 @@ public interface IDepartamentoService {
 	public void insertar(Departamento departamento);
 	public List<Departamento> listar();
 	public void eliminar(int idDepartamento);
+	public void actualizar(Departamento departamento);
 }

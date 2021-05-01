@@ -18,8 +18,6 @@ import javax.inject.Inject;
 
 import javax.inject.Named;
 
-
-
 import pe.edu.upc.entity.Departamento;
 
 import pe.edu.upc.service.IDepartamentoService;
@@ -106,6 +104,19 @@ public class DepartamentoController implements Serializable {
 
 		this.listar();
 
+	}
+	public String goActualizar(Departamento departamento) {
+		this.setDepartamento(departamento);
+		return "actualizarDepartamento.xhtml";
+	}
+	
+	public void actualizar() {
+		try {
+			dService.actualizar(departamento);
+			this.listar();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 

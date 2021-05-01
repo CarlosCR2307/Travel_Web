@@ -37,5 +37,11 @@ public class DepartamentoServiceImpl implements IDepartamentoService, Serializab
 		// TODO Auto-generated method stub
 		md.eliminar(idDepartamento);
 	}
+	
+	@Override
+	public void actualizar(Departamento departamento) {
+		// TODO Auto-generated method stub
+		md.actualizar(departamento);
+	}
 
 }

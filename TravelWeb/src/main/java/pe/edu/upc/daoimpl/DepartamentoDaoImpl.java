@@ -43,5 +43,15 @@ public class DepartamentoDaoImpl implements IDepartamentoDao, Serializable{
 		em.remove(departamento);
 		
 	}
+    @Transactional
+	@Override
+	public void actualizar(Departamento departamento) {
+		try {
+			em.merge(departamento);
+		} catch (Exception e) {
+			System.out.println("Error al editar curso");
+		}
+	}
+    
 
 }

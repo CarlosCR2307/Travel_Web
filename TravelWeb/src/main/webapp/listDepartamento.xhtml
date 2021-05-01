@@ -54,6 +54,11 @@
 								<h:commandLink action="listDepartamento" value="Eliminar"
 									actionListener="#{departamentoController.eliminar(dep)}" />
 							</p:column>
+							<p:column headerText="Operación" style="text-align:center">
+								<h:commandLink value="Actualizar" action="#{departamentoController.goActualizar(dep)}">
+									<i class="fas fa-trash-alt"></i>
+								</h:commandLink>
+							</p:column>
 
 						</p:dataTable>
 					</div>
