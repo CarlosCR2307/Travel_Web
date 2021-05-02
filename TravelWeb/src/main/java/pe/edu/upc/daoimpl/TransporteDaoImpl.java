@@ -44,5 +44,14 @@ public class TransporteDaoImpl implements ITransporteDao, Serializable {
 		em.remove(transporte);
 		
 	}
+    @Transactional
+	@Override
+	public void actualizar(Transporte transporte) {
+		try {
+			em.merge(transporte);
+		} catch (Exception e) {
+			System.out.println("Error al editar transporte");
+		}
+	}
 
 }
