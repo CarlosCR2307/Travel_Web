@@ -10,5 +10,4 @@ public interface IProvinciaDao {
 	public void insertar(Provincia provincia);
 	public List<Provincia> listar();
 	public void eliminar(int idProvincia);
-	public void actualizar(Provincia provincia);
 }
