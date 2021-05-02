@@ -42,6 +42,15 @@ public class ProvinciaDaoImpl implements IProvinciaDao, Serializable{
 		provincia=em.getReference(Provincia.class,idProvincia);
 		em.remove(provincia);
 		
+		
 	}
-
+    @Transactional
+ 	@Override
+ 	public void actualizar(Provincia Provincia) {
+ 		try {
+ 			em.merge(provincia);
+ 		} catch (Exception e) {
+ 			System.out.println("Error al editar provincia");
+ 		}
+    }
 }
