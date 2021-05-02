@@ -9,6 +9,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Hotel;
 import pe.edu.upc.service.IHotelService;
 
@@ -49,6 +50,24 @@ public class HotelController implements Serializable{
 		hService.eliminar(hotel.getIdHotel());
 		this.listar();
 	}
+	
+	
+	
+	public String goActualizar(Hotel hotel) {
+		this.setHotel(hotel);
+		return "actualizarHotel.xhtml";
+	}
+	
+	public void actualizar() {
+		try {
+			hService.actualizar(hotel);
+			this.listar();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	
 
 	public Hotel getHotel() {
 		return hotel;

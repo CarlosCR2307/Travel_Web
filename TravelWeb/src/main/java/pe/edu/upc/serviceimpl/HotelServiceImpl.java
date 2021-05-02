@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.dao.IHotelDao;
+import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Hotel;
 import pe.edu.upc.service.IHotelService;
 
@@ -37,6 +38,12 @@ public class HotelServiceImpl implements IHotelService, Serializable {
 	public void eliminar(int idHotel) {
 		// TODO Auto-generated method stub
 		hd.eliminar(idHotel);
+	}
+	
+	@Override
+	public void actualizar(Hotel hotel) {
+		// TODO Auto-generated method stub
+		hd.actualizar(hotel);
 	}
 
 }
