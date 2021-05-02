@@ -8,5 +8,5 @@ public interface IRestauranteDao {
 	public void insertar(Restaurante restaurante);
 	public List<Restaurante> listar();
 	public void eliminar(int idRestaurante);
-
+	public void actualizar(Restaurante restaurante);
 }

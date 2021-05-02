@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.dao.IRestauranteDao;
+import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Restaurante;
 import pe.edu.upc.service.IRestauranteService;
 
@@ -37,6 +38,13 @@ public class RestauranteServiceImpl implements IRestauranteService,Serializable{
 	public void eliminar(int idRestaurante) {
 		// TODO Auto-generated method stub
 		rd.eliminar(idRestaurante);
+	}
+	
+	
+	@Override
+	public void actualizar(Restaurante restaurante) {
+		// TODO Auto-generated method stub
+		rd.actualizar(restaurante);
 	}
 
 }

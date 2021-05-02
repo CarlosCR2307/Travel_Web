@@ -10,6 +10,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IRestauranteDao;
+import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Restaurante;
 
 public class RestauranteDaoImpl implements IRestauranteDao, Serializable{
@@ -44,4 +45,15 @@ public class RestauranteDaoImpl implements IRestauranteDao, Serializable{
 		em.remove(restaurante);
 	}
 
+	
+	@Transactional
+	@Override
+	public void actualizar(Restaurante restaurante) {
+			try {
+				em.merge(restaurante);
+			} catch (Exception e) {
+				System.out.println("Error al editar restaurante");
+			}
+		}
+	
 }
