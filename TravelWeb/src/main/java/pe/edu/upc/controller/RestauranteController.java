@@ -9,6 +9,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Restaurante;
 import pe.edu.upc.service.IRestauranteService;
 
@@ -49,6 +50,23 @@ public class RestauranteController implements Serializable{
 		rService.eliminar(restaurante.getIdRestaurante());
 		this.listar();
 	}
+	
+	
+	public String goActualizar(Restaurante restaurante) {
+		this.setRestaurante(restaurante);
+		return "actualizarRestaurante.xhtml";
+	}
+	
+	public void actualizar() {
+		try {
+			rService.actualizar(restaurante);
+			this.listar();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	
 
 	public Restaurante getRestaurante() {
 		return restaurante;

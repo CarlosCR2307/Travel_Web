@@ -10,6 +10,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IHotelDao;
+import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Hotel;
 
 public class HotelDaoImpl implements IHotelDao, Serializable{
@@ -42,6 +43,17 @@ public class HotelDaoImpl implements IHotelDao, Serializable{
 		em.remove(hotel);
 		
 	}
+	
+	 @Transactional
+		@Override
+		public void actualizar(Hotel hotel) {
+			try {
+				em.merge(hotel);
+			} catch (Exception e) {
+				System.out.println("Error al editar hotel");
+			}
+		}
+	
 	
 
 }

@@ -53,14 +53,19 @@
 							</p:column>
 							<p:column headerText="Precio" sortBy="#{hot.precioHotel}">
 								<h:outputText value="#{hot.precioHotel}" />
-							</p:column>
-							
-							
-							
+							</p:column>							
+														
 							<p:column headerText="Operación" exportable="false">
 								<h:commandLink action="listHotel" value="Eliminar"
 									actionListener="#{hotelController.eliminar(hot)}" />
 							</p:column>
+							
+							<p:column headerText="Operación" style="text-align:center">
+                                <h:commandLink value="Actualizar" action="#{hotelController.goActualizar(hot)}">
+                                    <i class="fas fa-trash-alt"></i>
+                                </h:commandLink>
+                            </p:column>
+							
 
 						</p:dataTable>
 					</div>

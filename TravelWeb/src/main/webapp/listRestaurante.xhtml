@@ -10,7 +10,7 @@
 <ui:composition template="master1.xhtml"> 
 	
 	<ui:define name="title">
-		.:Listado de Restaurante:.
+		.:Listado de Restaurantes:.
 	</ui:define>
 	
 	<ui:define name="titleCont">
@@ -61,6 +61,15 @@
 								<h:commandLink action="listRestaurante" value="Eliminar"
 									actionListener="#{restauranteController.eliminar(res)}" />
 							</p:column>
+							
+							
+							<p:column headerText="Operación" style="text-align:center">
+                                <h:commandLink value="Actualizar" action="#{restauranteController.goActualizar(res)}">
+                                    <i class="fas fa-trash-alt"></i>
+                                </h:commandLink>
+                            </p:column>
+							
+							
 
 						</p:dataTable>
 					</div>

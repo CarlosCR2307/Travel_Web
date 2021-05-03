@@ -8,5 +8,5 @@ public interface IHotelService {
 	public void insertar(Hotel hotel);
 	public List<Hotel> listar();
 	public void eliminar(int idHotel);
-
+	public void actualizar(Hotel hotel);
 }
