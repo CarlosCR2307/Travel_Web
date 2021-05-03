@@ -37,5 +37,9 @@ public class ProvinciaServiceImpl implements IProvinciaService, Serializable{
 		// TODO Auto-generated method stub
 		pd.eliminar(idProvincia);
 	}
-
+	@Override
+	public void actualizar(Provincia provincia) {
+		// TODO Auto-generated method stub
+		md.actualizar(provincia);
+	}
 }
