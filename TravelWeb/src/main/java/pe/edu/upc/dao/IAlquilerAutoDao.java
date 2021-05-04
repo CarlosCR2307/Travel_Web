@@ -3,7 +3,6 @@ package pe.edu.upc.dao;
 import java.util.List;
 
 import pe.edu.upc.entity.AlquilerAuto;
-import pe.edu.upc.entity.Departamento;
 
 public interface IAlquilerAutoDao {
 	public void insertar(AlquilerAuto alquilerAuto);

@@ -2,7 +2,6 @@ package pe.edu.upc.dao;
 
 import java.util.List;
 
-import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Turista;
 
 public interface ITuristaDao {

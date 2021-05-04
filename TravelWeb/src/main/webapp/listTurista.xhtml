@@ -65,6 +65,11 @@
 								<h:commandLink action="listTurista" value="Eliminar"
 									actionListener="#{turistaController.eliminar(tur)}" />
 							</p:column>
+							<p:column headerText="Operación" style="text-align:center">
+								<h:commandLink value="Actualizar" action="#{turistaController.goActualizar(tur)}">
+									<i class="fas fa-trash-alt"></i>
+								</h:commandLink>
+							</p:column>
 
 						</p:dataTable>
 					</div>

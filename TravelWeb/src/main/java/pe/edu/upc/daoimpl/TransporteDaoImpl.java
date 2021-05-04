@@ -10,7 +10,6 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.ITransporteDao;
-import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Transporte;
 
 public class TransporteDaoImpl implements ITransporteDao, Serializable {

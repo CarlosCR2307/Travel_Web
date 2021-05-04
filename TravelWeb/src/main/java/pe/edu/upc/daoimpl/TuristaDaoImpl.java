@@ -10,7 +10,6 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.ITuristaDao;
-import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Turista;
 
 public class TuristaDaoImpl implements ITuristaDao, Serializable {

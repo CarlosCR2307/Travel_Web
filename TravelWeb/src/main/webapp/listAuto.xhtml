@@ -58,6 +58,11 @@
 								<h:commandLink action="listAuto" value="Eliminar"
 									actionListener="#{alquilerAutoController.eliminar(aut)}" />
 							</p:column>
+							<p:column headerText="Operación" style="text-align:center">
+								<h:commandLink value="Actualizar" action="#{alquilerAutoController.goActualizar(aut)}">
+									<i class="fas fa-trash-alt"></i>
+								</h:commandLink>
+							</p:column>
 
 						</p:dataTable>
 					</div>

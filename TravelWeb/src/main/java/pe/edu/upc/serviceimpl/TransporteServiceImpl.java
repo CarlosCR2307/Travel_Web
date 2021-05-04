@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.dao.ITransporteDao;
-import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Transporte;
 import pe.edu.upc.service.ITransporteService;
 

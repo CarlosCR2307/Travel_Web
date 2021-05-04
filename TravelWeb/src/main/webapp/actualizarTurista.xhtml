@@ -19,16 +19,44 @@
 		<h:form>
 			<h:outputLabel for="idTurista" value="Id " styleClass="control-label" />
 
-			<p:inputText autocomplete="off" id="idturista"
+			<p:inputText autocomplete="off" id="idTurista"
 				styleClass="form-control" value="#{turistaController.turista.idTurista}"
 				required="true" />
+				
+			<h:outputLabel for="dniTurista" value="dni "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="dniTurista"
+				styleClass="form-control"
+				value="#{turistaController.turista.dni}" maxlength="8"
+				required="true" />
+				
+				
 			<h:outputLabel for="nombreTurista" value="Nombre "
 				styleClass="control-label" />
 
 			<p:inputText autocomplete="off" id="nombreTurista"
 				styleClass="form-control"
-				value="#{turistaController.turista.nombreTurista}" maxlength="30"
+				value="#{turistaController.turista.nombreTurista}" maxlength="20"
 				required="true" />
+
+			<h:outputLabel for="apellidoTurista" value="Apellido "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="apellidoTurista"
+				styleClass="form-control"
+				value="#{turistaController.turista.apellidoTurista}" maxlength="30"
+				required="true" />
+				
+			
+			<h:outputLabel for="telefonoTurista" value="Telefono "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="telefonoTurista"
+				styleClass="form-control"
+				value="#{turistaController.turista.telefono}" maxlength="9"
+				required="true" />
+				
 
 			<br />
 
