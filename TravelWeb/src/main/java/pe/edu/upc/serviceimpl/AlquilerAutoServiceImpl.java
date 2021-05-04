@@ -9,6 +9,7 @@ import javax.inject.Named;
 
 import pe.edu.upc.dao.IAlquilerAutoDao;
 import pe.edu.upc.entity.AlquilerAuto;
+import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.service.IAlquilerAutoService;
 
 @Named
@@ -39,4 +40,9 @@ public class AlquilerAutoServiceImpl implements IAlquilerAutoService,Serializabl
 		
 	}
 
+	@Override
+	public void actualizar(AlquilerAuto alquilerAuto) {
+		// TODO Auto-generated method stub
+		ad.actualizar(alquilerAuto);
+	}
 }

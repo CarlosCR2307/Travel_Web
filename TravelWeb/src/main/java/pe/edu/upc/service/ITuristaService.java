@@ -8,6 +8,5 @@ public interface ITuristaService {
 	public void insertar(Turista turista);
 	public List<Turista> listar();
 	public void eliminar(int idTurista);
-
-
+	public void actualizar(Turista turista);
 }

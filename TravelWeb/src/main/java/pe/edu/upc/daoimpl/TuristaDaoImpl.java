@@ -10,6 +10,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.ITuristaDao;
+import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Turista;
 
 public class TuristaDaoImpl implements ITuristaDao, Serializable {
@@ -45,4 +46,13 @@ public class TuristaDaoImpl implements ITuristaDao, Serializable {
 		
 	}
 
+	 @Transactional
+		@Override
+		public void actualizar(Turista turista) {
+			try {
+				em.merge(turista);
+			} catch (Exception e) {
+				System.out.println("Error al editar curso");
+			}
+		}
 }

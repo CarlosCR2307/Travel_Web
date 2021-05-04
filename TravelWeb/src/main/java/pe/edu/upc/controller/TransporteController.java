@@ -9,6 +9,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Transporte;
 import pe.edu.upc.service.ITransporteService;
 
@@ -51,6 +52,7 @@ public class TransporteController implements Serializable{
 		this.listar();
 	}
 
+	
 	public Transporte getTransporte() {
 		return transporte;
 	}

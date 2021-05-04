@@ -8,6 +8,4 @@ public interface ITransporteService {
 	public void insertar(Transporte transporte);
 	public List<Transporte> listar();
 	public void eliminar(int idTransporte);
-
-
 }

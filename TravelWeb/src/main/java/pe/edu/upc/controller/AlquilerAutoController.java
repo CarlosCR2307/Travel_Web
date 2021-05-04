@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entity.AlquilerAuto;
+import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.service.IAlquilerAutoService;
 
 @Named
@@ -51,6 +52,20 @@ public class AlquilerAutoController implements Serializable{
 		this.listar();
 	}
 
+	public String goActualizar(AlquilerAuto alquilerAuto) {
+		this.setAlquilerAuto(alquilerAuto);
+		return "actualizarAlquilerAuto.xhtml";
+	}
+	
+	public void actualizar() {
+		try {
+			aService.actualizar(alquilerAuto);
+			this.listar();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
 	public IAlquilerAutoService getaService() {
 		return aService;
 	}
