@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IAlquilerAutoDao;
 import pe.edu.upc.entity.AlquilerAuto;
+import pe.edu.upc.entity.Departamento;
 
 public class AlquilerAutoDaoImpl implements IAlquilerAutoDao, Serializable {
 
@@ -45,4 +46,13 @@ public class AlquilerAutoDaoImpl implements IAlquilerAutoDao, Serializable {
 		
 	}
 
+	 @Transactional
+		@Override
+		public void actualizar(AlquilerAuto alquilerAuto) {
+			try {
+				em.merge(alquilerAuto);
+			} catch (Exception e) {
+				System.out.println("Error al editar curso");
+			}
+		}
 }

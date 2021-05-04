@@ -9,6 +9,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+
 import pe.edu.upc.entity.Turista;
 import pe.edu.upc.service.ITuristaService;
 
@@ -50,6 +51,20 @@ public class TuristaController implements Serializable{
 		this.listar();
 	}
 
+	public String goActualizar(Turista turista) {
+		this.setTurista(turista);
+		return "actualizarTurista.xhtml";
+	}
+	
+	public void actualizar() {
+		try {
+			cService.actualizar(turista);
+			this.listar();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
 	public Turista getTurista() {
 		return turista;
 	}

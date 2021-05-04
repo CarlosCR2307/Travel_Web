@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.dao.ITuristaDao;
+import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Turista;
 import pe.edu.upc.service.ITuristaService;
 
@@ -38,4 +39,9 @@ public class TuristaServiceImpl implements ITuristaService,Serializable{
 		
 	}
 
+	@Override
+	public void actualizar(Turista turista) {
+		// TODO Auto-generated method stub
+		td.actualizar(turista);
+	}
 }
