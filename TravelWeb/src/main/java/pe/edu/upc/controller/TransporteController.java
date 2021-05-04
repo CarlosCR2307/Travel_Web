@@ -50,6 +50,20 @@ public class TransporteController implements Serializable{
 		tService.eliminar(transporte.getIdTransporte());
 		this.listar();
 	}
+	
+	public String goActualizar(Transporte transporte) {
+		this.setTransporte(transporte);
+		return "actualizarTransporte.xhtml";
+	}
+	
+	public void actualizar() {
+		try {
+			dService.actualizar(transporte);
+			this.listar();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 
 	public Transporte getTransporte() {
 		return transporte;

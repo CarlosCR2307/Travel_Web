@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master1.xhtml">
+
+	<ui:define name="title">
+        .:Actualización de Provincias:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Actualizar Provincia</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idProvincia" value="Id " styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="idProvincia"
+				styleClass="form-control" value="#{provinciaController.provincia.idProvincia}"
+				required="true" />
+				
+            <h:outputLabel for="nombreProvincia" value="Nombre "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="nombreProvincia"
+				styleClass="form-control"
+				value="#{provinciaController.provincia.nombreProvincia}" maxlength="35"
+				required="true" />
+			<p:outputLabel for="cboDepartamento" value ="Departamento"/>
+			<p:selectOneMenu id="cboDepartamento" value="#{provinciaController.provincia.departamento}"
+			    converter="omnifaces.SelectItemsConverter">
+			    <f:selectItems value ="#{provinciaController.listaDepartamentos}" var="d"
+			    itemLabel="#{d.nombreDepartamento}" itemValue="#{d}"/>
+			</p:selectOneMenu>
+
+			<br />
+
+
+			<p:commandButton value="Actualizar"
+				actionListener="#{provinciaController.actualizar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listProvincia?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listProvincia?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

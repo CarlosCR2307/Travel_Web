@@ -38,5 +38,9 @@ public class TransporteServiceImpl implements ITransporteService,Serializable{
 		td.eliminar(idTransporte);
 		
 	}
-
+	@Override
+	public void actualizar(Transporte transporte) {
+		// TODO Auto-generated method stub
+		md.actualizar(transporte);
+	}
 }

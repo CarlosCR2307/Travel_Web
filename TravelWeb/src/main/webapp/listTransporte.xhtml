@@ -61,6 +61,11 @@
 								<h:commandLink action="listTransporte" value="Eliminar"
 									actionListener="#{transporteController.eliminar(tra)}" />
 							</p:column>
+							<p:column headerText="Operación" style="text-align:center">
+								<h:commandLink value="Actualizar" action="#{transporteController.goActualizar(tra)}">
+									<i class="fas fa-trash-alt"></i>
+								</h:commandLink>
+							</p:column>
 
 						</p:dataTable>
 					</div>

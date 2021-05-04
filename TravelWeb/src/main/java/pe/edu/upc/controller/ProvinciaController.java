@@ -123,7 +123,19 @@ public class ProvinciaController implements Serializable {
 		this.listarProvincia();
 
 	}
-
+	public String goActualizar(Provincia provincia) {
+		this.setProvincia(provincia);
+		return "actualizarProvincia.xhtml";
+	}
+	
+	public void actualizar() {
+		try {
+			dService.actualizar(provincia);
+			this.listar();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 
 	public Provincia getProvincia() {
 		return provincia;
