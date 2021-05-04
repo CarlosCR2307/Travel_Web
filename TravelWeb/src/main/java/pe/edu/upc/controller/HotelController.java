@@ -9,7 +9,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Hotel;
 import pe.edu.upc.service.IHotelService;
 

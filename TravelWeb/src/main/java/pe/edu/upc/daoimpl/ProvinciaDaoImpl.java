@@ -46,7 +46,7 @@ public class ProvinciaDaoImpl implements IProvinciaDao, Serializable{
 	}
     @Transactional
  	@Override
- 	public void actualizar(Provincia Provincia) {
+ 	public void actualizar(Provincia provincia) {
  		try {
  			em.merge(provincia);
  		} catch (Exception e) {

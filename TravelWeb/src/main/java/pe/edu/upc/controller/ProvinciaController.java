@@ -130,7 +130,7 @@ public class ProvinciaController implements Serializable {
 	
 	public void actualizar() {
 		try {
-			dService.actualizar(provincia);
+			pService.actualizar(provincia);
 			this.listar();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

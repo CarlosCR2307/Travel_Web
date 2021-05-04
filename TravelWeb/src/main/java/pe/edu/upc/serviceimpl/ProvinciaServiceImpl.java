@@ -40,6 +40,6 @@ public class ProvinciaServiceImpl implements IProvinciaService, Serializable{
 	@Override
 	public void actualizar(Provincia provincia) {
 		// TODO Auto-generated method stub
-		md.actualizar(provincia);
+		pd.actualizar(provincia);
 	}
 }

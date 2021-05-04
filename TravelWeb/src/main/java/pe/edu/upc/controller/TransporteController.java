@@ -58,7 +58,7 @@ public class TransporteController implements Serializable{
 	
 	public void actualizar() {
 		try {
-			dService.actualizar(transporte);
+			tService.actualizar(transporte);
 			this.listar();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

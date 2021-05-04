@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.dao.IRestauranteDao;
-import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Restaurante;
 import pe.edu.upc.service.IRestauranteService;
 

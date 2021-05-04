@@ -41,6 +41,6 @@ public class TransporteServiceImpl implements ITransporteService,Serializable{
 	@Override
 	public void actualizar(Transporte transporte) {
 		// TODO Auto-generated method stub
-		md.actualizar(transporte);
+		td.actualizar(transporte);
 	}
 }

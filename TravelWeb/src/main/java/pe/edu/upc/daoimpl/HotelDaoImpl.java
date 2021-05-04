@@ -10,7 +10,6 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IHotelDao;
-import pe.edu.upc.entity.Departamento;
 import pe.edu.upc.entity.Hotel;
 
 public class HotelDaoImpl implements IHotelDao, Serializable{
