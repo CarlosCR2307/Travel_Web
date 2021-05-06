@@ -2,76 +2,109 @@ package pe.edu.upc.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="transporte")
+@Table(name="ReservaViaje")
 public class ReservaViaje implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idTransporte;
+	private int idReservaViaje;
 	
-	@Column(name="tipoTransporte",nullable=false,length=20)
-	private String tipoTransporte;
+	@ManyToOne
+	@JoinColumn(name="idTransporte",nullable=false)
+	private Transporte transporte; 
 	
-	@Column(name="nameEmpresa",nullable=false,length=30)
-	private String Empresa;
+	@ManyToOne
+	@JoinColumn(name="idRestaurante",nullable=false)
+	private Restaurante restaurante;
 	
-	@Column(name="precioTransporte",nullable=false)
-	private int precio;
-
+	@ManyToOne
+	@JoinColumn(name="idHotel",nullable=false)
+	private Hotel hotel;
+	
+	@ManyToOne
+	@JoinColumn(name="idProvincia",nullable=false)
+	private Provincia provincia;
+	
+	@ManyToOne
+	@JoinColumn(name="idAlquilerAuto",nullable=false)
+	private AlquilerAuto auto;
+	
+	
 	public ReservaViaje() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ReservaViaje(int idTransporte, String tipoTransporte, String empresa, int precio) {
+	public ReservaViaje(int idReservaViaje, Transporte transporte, Restaurante restaurante, Hotel hotel,
+			Provincia provincia, AlquilerAuto auto) {
 		super();
-		this.idTransporte = idTransporte;
-		this.tipoTransporte = tipoTransporte;
-		Empresa = empresa;
-		this.precio = precio;
+		this.idReservaViaje = idReservaViaje;
+		this.transporte = transporte;
+		this.restaurante = restaurante;
+		this.hotel = hotel;
+		this.provincia = provincia;
+		this.auto = auto;
 	}
 
-	public int getIdTransporte() {
-		return idTransporte;
+	public int getIdReservaViaje() {
+		return idReservaViaje;
 	}
 
-	public void setIdTransporte(int idTransporte) {
-		this.idTransporte = idTransporte;
+	public void setIdReservaViaje(int idReservaViaje) {
+		this.idReservaViaje = idReservaViaje;
 	}
 
-	public String getTipoTransporte() {
-		return tipoTransporte;
+	public Transporte getTransporte() {
+		return transporte;
 	}
 
-	public void setTipoTransporte(String tipoTransporte) {
-		this.tipoTransporte = tipoTransporte;
+	public void setTransporte(Transporte transporte) {
+		this.transporte = transporte;
 	}
 
-	public String getEmpresa() {
-		return Empresa;
+	public Restaurante getRestaurante() {
+		return restaurante;
 	}
 
-	public void setEmpresa(String empresa) {
-		Empresa = empresa;
+	public void setRestaurante(Restaurante restaurante) {
+		this.restaurante = restaurante;
 	}
 
-	public int getPrecio() {
-		return precio;
+	public Hotel getHotel() {
+		return hotel;
 	}
 
-	public void setPrecio(int precio) {
-		this.precio = precio;
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
 	}
-	
+
+	public Provincia getProvincia() {
+		return provincia;
+	}
+
+	public void setProvincia(Provincia provincia) {
+		this.provincia = provincia;
+	}
+
+	public AlquilerAuto getAuto() {
+		return auto;
+	}
+
+	public void setAuto(AlquilerAuto auto) {
+		this.auto = auto;
+	}
+
+
 	
 }

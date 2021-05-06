@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master2.xhtml">
+
+	<ui:define name="title">
+        .:Actualizacion de Reserva de Viajes:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Actualizar Reserva de Viajes</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idReservaViaje" value="Id " styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="idReservaViaje"
+				styleClass="form-control" value="#{reservaViajeController.reservaviaje.idReservaViaje}"
+				required="true" />
+			<p:outputLabel for="cboTransporte" value ="Transporte"/>
+			<p:selectOneMenu id="cboTransporte" value="#{reservaViajeController.reservaviaje.transporte}"
+			    converter="omnifaces.SelectItemsConverter">
+			    <f:selectItems value ="#{reservaViajeController.listaTransportes}" var="t"
+			    itemLabel="#{t.tipoTransporte}" itemValue="#{t}"/>
+			</p:selectOneMenu>
+			<br />
+			<p:outputLabel for="cboHotel" value ="Hotel"/>
+			<p:selectOneMenu id="cboHotel" value="#{reservaViajeController.reservaviaje.hotel}"
+			    converter="omnifaces.SelectItemsConverter">
+			    <f:selectItems value ="#{reservaViajeController.listaHoteles}" var="h"
+			    itemLabel="#{h.nombreHotel}" itemValue="#{h}"/>
+			</p:selectOneMenu>
+			<br />
+			<p:outputLabel for="cboRestaurante" value ="Restaurante"/>
+			<p:selectOneMenu id="cboRestaurante" value="#{reservaViajeController.reservaviaje.restaurante}"
+			    converter="omnifaces.SelectItemsConverter">
+			    <f:selectItems value ="#{reservaViajeController.listaRestaurantes}" var="r"
+			    itemLabel="#{r.nombreRestaurante}" itemValue="#{r}"/>
+			</p:selectOneMenu>
+			<br />
+			<p:outputLabel for="cboDepartamento" value ="Departamento"/>
+			<p:selectOneMenu id="cboDepartamento" value="#{reservaViajeController.reservaviaje.provincia}"
+			    converter="omnifaces.SelectItemsConverter">
+			    <f:selectItems value ="#{reservaViajeController.listaProvincias}" var="d"
+			    itemLabel="#{d.departamento.nombreDepartamento}" itemValue="#{d}"/>
+			</p:selectOneMenu>
+			<br />
+			<p:outputLabel for="cboProvincia" value ="Provincia"/>
+			<p:selectOneMenu id="cboProvincia" value="#{reservaViajeController.reservaviaje.provincia}"
+			    converter="omnifaces.SelectItemsConverter">
+			    <f:selectItems value ="#{reservaViajeController.listaProvincias}" var="p"
+			    itemLabel="#{p.nombreProvincia}" itemValue="#{p}"/>
+			</p:selectOneMenu>
+			<br />
+			<p:outputLabel for="cboAlquilerAuto" value ="Alquiler Auto"/>
+			<p:selectOneMenu id="cboAlquilerAuto" value="#{reservaViajeController.reservaviaje.auto}"
+			    converter="omnifaces.SelectItemsConverter">
+			    <f:selectItems value ="#{reservaViajeController.listaAlquilerAutos}" var="a"
+			    itemLabel="#{a.modeloAuto}" itemValue="#{a}"/>
+			</p:selectOneMenu>
+			
+			
+			<br />
+
+
+			<p:commandButton value="Actualizar"
+				actionListener="#{reservaViajeController.actualizar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listReservarViaje?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listReservarViaje?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

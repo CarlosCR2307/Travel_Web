@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html 	
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+		
+<ui:composition template="master2.xhtml"> 
+	
+	<ui:define name="title">
+		.:Listado de Reservas:.
+	</ui:define>
+	
+	<ui:define name="titleCont">
+		<span>Reservas de Viaje</span>
+	</ui:define>
+	
+	<ui:define name="content">
+		<h:form>
+		
+			<div class="row">
+				<div class="col-sm-8 text-right">
+					<div class="form-group box-main-btn">
+						<span style="display: block; height:30px;"></span>
+						<p:commandButton value="Nuevo"						
+							action="#{reservaViajeController.nuevoReservaViaje()}"
+							styleClass="btn btn-primary ajax=false" />
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+						<p:dataTable id="lstReservarViaje" var="res"
+							value="#{reservaViajeController.listaReservaViajes}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No tienes Reservas" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{res.idReservaViaje}">
+								<h:outputText value="#{res.idReservaViaje}" />
+							</p:column>
+							
+							<p:column headerText="Transporte" sortBy="#{res.transporte.tipoTransporte}">
+								<h:outputText value="#{res.transporte.tipoTransporte}" />
+							</p:column>
+							
+							<p:column headerText="Restaurante" sortBy="#{res.restaurante.nombreRestaurante}">
+								<h:outputText value="#{res.restaurante.nombreRestaurante}" />
+							</p:column>
+							
+							<p:column headerText="Hotel" sortBy="#{res.hotel.nombreHotel}">
+								<h:outputText value="#{res.hotel.nombreHotel}" />
+							</p:column>
+
+							<p:column headerText="Provincia" sortBy="#{res.provincia.nombreProvincia}">
+								<h:outputText value="#{res.provincia.nombreProvincia}" />
+							</p:column>
+							
+							<p:column headerText="Departamento"> 
+								<h:outputText value="#{res.provincia.departamento.nombreDepartamento}" />
+							</p:column>
+							
+							<p:column headerText="Auto Alquilado" sortBy="#{res.auto.modeloAuto}">
+								<h:outputText value="#{res.auto.modeloAuto}" />
+							</p:column>
+							
+							<p:column headerText="Precio" >
+								<h:outputText value="#{res.transporte.precio+res.hotel.precioHotel+res.auto.precio}" />
+							</p:column>
+							
+							
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listReservarViaje" value="Eliminar Reserva"
+									actionListener="#{reservaViajeController.eliminar(res)}" />
+							</p:column>
+				            <p:column headerText="Operación" style="text-align:center">
+								<h:commandLink value="Actualizar" action="#{reservaViajeController.goActualizar(res)}">
+									<i class="fas fa-trash-alt"></i>
+								</h:commandLink>
+							</p:column>
+							
+
+						</p:dataTable>
+					</div>
+				</div>				
+			</div>									
+		</h:form>
+	</ui:define>
+	
+	<ui:define name="footerCont">
+	</ui:define>
+		
+</ui:composition> 
+</html>
+ 

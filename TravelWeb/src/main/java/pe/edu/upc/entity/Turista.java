@@ -85,5 +85,46 @@ public class Turista implements Serializable{
 		this.telefono = telefono;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((ApellidoTurista == null) ? 0 : ApellidoTurista.hashCode());
+		result = prime * result + dni;
+		result = prime * result + idTurista;
+		result = prime * result + ((nombreTurista == null) ? 0 : nombreTurista.hashCode());
+		result = prime * result + telefono;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Turista other = (Turista) obj;
+		if (ApellidoTurista == null) {
+			if (other.ApellidoTurista != null)
+				return false;
+		} else if (!ApellidoTurista.equals(other.ApellidoTurista))
+			return false;
+		if (dni != other.dni)
+			return false;
+		if (idTurista != other.idTurista)
+			return false;
+		if (nombreTurista == null) {
+			if (other.nombreTurista != null)
+				return false;
+		} else if (!nombreTurista.equals(other.nombreTurista))
+			return false;
+		if (telefono != other.telefono)
+			return false;
+		return true;
+	}
+	
+
 	
 }
